@@ -1,9 +1,15 @@
 FROM node:16-alpine3.14
 
-EXPOSE 8080
+RUN apk add --no-cache git make python3 py3-pip gcc g++
+
+ENV PORT=8080
+
+EXPOSE ${PORT}
 
 WORKDIR /app
 
 COPY . .
+
+RUN yarn
 
 CMD ["yarn", "start"]
