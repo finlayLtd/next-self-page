@@ -5,21 +5,10 @@ import tr from "@locales/tr.yaml";
 import constants from "@locales/constants.yaml";
 import { CONFIG } from "./config";
 
-export interface IToken {
-	key: string;
-	value: string;
-}
-
-export interface ITokens {
-	[key: string]: IToken;
-}
-
 const locales = { en, tr };
-const tokens: ITokens = {
-	purple: {
-		key: "purple",
-		value: "<span class='text-purple-500'>",
-	},
+const tokens = {
+	purple: "<span class='text-purple-500'>",
+	blue: "<span class='text-blue-500'>",
 };
 
 class LocaleParser {
@@ -31,10 +20,7 @@ class LocaleParser {
 		this.locale = locale;
 	}
 
-	public get(
-		name: string,
-		args?: { [param: string]: string },
-	): string {
+	public get(name: string, args?: { [param: string]: string }): string {
 		const locale = locales[this.locale] || locales["en"];
 		let str = locale[name];
 
@@ -59,18 +45,21 @@ class LocaleParser {
 	private replaceConstants(str: string) {
 		for (const constant in constants) {
 			const regToken = new RegExp(`%{${constant}}`, "gm");
-			str = str.replace(regToken, constants[constant] || "CONSTANT_NOT_FOUND");
+			str = str.replace(
+				regToken,
+				constants[constant] || "CONSTANT_NOT_FOUND",
+			);
 		}
 
 		return str;
 	}
 
 	private replaceColors(str: string) {
-		for (const t in tokens) {
-			const token = tokens[t];
+		for (const token in tokens) {
+			const value = tokens[token];
 			str = str
-				.replace(new RegExp(`<${token.key}[^>]*>`, "gm"), token.value)
-				.replace(new RegExp(`</${token.key}[^>]*>`, "gm"), "</span>");
+				.replace(new RegExp(`<${token}[^>]*>`, "gm"), value)
+				.replace(new RegExp(`</${token}[^>]*>`, "gm"), "</span>");
 		}
 
 		return str;

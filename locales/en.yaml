@@ -24,7 +24,7 @@ drop: drop
 restart: restart
 game_over: Game Over
 winner: "%{player} won!"
-new_domain_alert: I have migrated to a new domain name. Now when entering this site, make sure it says %{link} in the address bar!
+new_domain_alert: I have migrated to a new domain name. Now when entering this site, make sure it says <blue>%{link}</blue> in the address bar!
 new_domain: New Domain
 home: Home
 about: About
@@ -80,3 +80,5 @@ overlay_creator_description: Adds beautiful overlays to your avatar.
 apps_overlay_creator: Overlay Creator - Apps
 avatar: Avatar URL
 playing: Playing %{game}
+github_sponsors_title: Now You Can Sponsor Me Via Github
+github_sponsors_description: "You can easily support my projects and me via Github sponsors system! You can follow this link for sponsorship: <blue>%{link}</blue>"
