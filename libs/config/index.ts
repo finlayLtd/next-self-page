@@ -16,13 +16,10 @@ export interface IFramework {
 	icon: string;
 }
 
-const domain = "338.rocks";
-
 const SEO = {
 	layoutTitle: "%s - Barış DEMİRCİ",
 	title: "Home - Barış DEMİRCİ",
-	domain,
-	publishDomain: `https://${domain}`,
+	publishDomain: "https://338.rocks",
 	themeColor: "#6D28D9",
 	keywords: [
 		"baris",

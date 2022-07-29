@@ -64,7 +64,7 @@ export const Bookmark: FC<IBookmark> = ({
 	);
 
 	return (
-		<Tippy tooltip={parser.get("click_me")}>
+		<Tippy tooltip={parser.get("click_me") as string}>
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					<Link href={url}>

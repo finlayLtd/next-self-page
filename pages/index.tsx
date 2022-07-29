@@ -21,7 +21,7 @@ const IndexPage: NextPage<IIndexPage> = ({ repos, pinned }) => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("home")}>
+		<Layout title={parser.get("home") as string}>
 			<Hero />
 			<About />
 			<Projects repos={repos} pinned={pinned} />

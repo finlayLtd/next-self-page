@@ -7,7 +7,7 @@ const TicTacToeAppPage: NextPage = () => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("apps_tic_tac_toe")}>
+		<Layout title={parser.get("apps_tic_tac_toe") as string}>
 			<TicTacToeGame />
 		</Layout>
 	);

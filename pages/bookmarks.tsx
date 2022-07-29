@@ -14,7 +14,7 @@ const BookmarksPage: NextPage<IBookmarksPage> = ({ bookmarks }) => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("bookmarks")}>
+		<Layout title={parser.get("bookmarks") as string}>
 			<Bookmarks bookmarks={bookmarks} />
 		</Layout>
 	);
@@ -23,8 +23,8 @@ const BookmarksPage: NextPage<IBookmarksPage> = ({ bookmarks }) => {
 export default BookmarksPage;
 
 export const getStaticProps: GetStaticProps<IBookmarksPage> = async () => {
-	const url = process.env.STORAGE_URL;
-	const token = process.env.STORAGE_AUTH_TOKEN;
+	const url = process.env.STORAGE_URL as string;
+	const token = process.env.STORAGE_AUTH_TOKEN as string;
 
 	const { data } = await axios.get(`${url}/v1/bookmark`, {
 		headers: {

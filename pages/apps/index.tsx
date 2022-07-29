@@ -11,29 +11,29 @@ const AppsPage: NextPage = () => {
 
 	const apps = [
 		{
-			name: parser.get("minesweeper"),
-			description: parser.get("minesweeper_description"),
+			name: parser.get("minesweeper") as string,
+			description: parser.get("minesweeper_description") as string,
 			icon: FaBomb,
 			href: "/apps/minesweeper",
 			color: "text-black",
 		},
 		{
-			name: parser.get("tetris"),
-			description: parser.get("tetris_description"),
+			name: parser.get("tetris") as string,
+			description: parser.get("tetris_description") as string,
 			icon: FiBox,
 			href: "/apps/tetris",
 			color: "text-blue-500",
 		},
 		{
-			name: parser.get("tic_tac_toe"),
-			description: parser.get("tic_tac_toe_description"),
+			name: parser.get("tic_tac_toe") as string,
+			description: parser.get("tic_tac_toe_description") as string,
 			icon: FiX,
 			href: "/apps/tictactoe",
 			color: "text-red-500",
 		},
 		{
-			name: parser.get("overlay_creator"),
-			description: parser.get("overlay_creator_description"),
+			name: parser.get("overlay_creator") as string,
+			description: parser.get("overlay_creator_description") as string,
 			icon: FiCrop,
 			href: "/apps/overlay-creator",
 			color: "text-indigo-500",
@@ -41,12 +41,12 @@ const AppsPage: NextPage = () => {
 	];
 
 	return (
-		<Layout title={parser.get("apps")}>
+		<Layout title={parser.get("apps") as string}>
 			<section className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white text-center">
 				<h1
 					className="text-4xl mb-10 font-semibold font-heading"
 					dangerouslySetInnerHTML={{
-						__html: parser.get("all_apps"),
+						__html: parser.get("all_apps") as string,
 					}}
 				/>
 				<div className="container mx-auto mb-12">

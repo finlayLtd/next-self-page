@@ -3,14 +3,10 @@ const { withPlugins } = require("next-compose-plugins");
 const withImages = require("next-images");
 const withYAML = require("next-yaml");
 
-/**
- * @type {import("next").NextConfig}
- */
-const nextConfig = {
+module.exports = withPlugins([withImages, withYAML], {
 	reactStrictMode: true,
 	poweredByHeader: false,
 	trailingSlash: true,
-	swcMinify: true,
 	i18n: {
 		locales: ["en", "tr"],
 		defaultLocale: "en",
@@ -44,6 +40,4 @@ const nextConfig = {
 			},
 		];
 	},
-};
-
-module.exports = withPlugins([withImages, withYAML], nextConfig);
+});
